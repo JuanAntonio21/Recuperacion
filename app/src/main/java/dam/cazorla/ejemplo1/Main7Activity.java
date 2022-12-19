@@ -13,9 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main7Activity extends AppCompatActivity {
     int notifID=1;
 
     Button n,m,c,b;
@@ -23,25 +22,60 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main7);
 
         n=findViewById(R.id.n);
-        m=findViewById(R.id.m);
+        b=findViewById(R.id.b);
         c=findViewById(R.id.c);
         b=findViewById(R.id.b);
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent be = new Intent (view.getContext(), Main3Activity.class);
-                startActivityForResult(be, 0);
-            }
-        });
+
+
 
 
 
 
     }
+    public void onClick2(View view) {
+        NotificationCompat.Builder builder = new  NotificationCompat.Builder(this, "Mi canal")
+                .setSmallIcon(android.R.drawable.ic_dialog_alert)
+                .setContentTitle("GANASTES")
+                .setContentText("Has acertado todas las prreguntas")
+                .setPriority(NotificationCompat.PRIORITY_HIGH);
+
+        Intent resultadoIntent = new Intent(this, MainActivity.class);
+
+        TaskStackBuilder pila = TaskStackBuilder.create(this);
+        pila.addParentStack(MainActivity.class);
+
+        //Añade intent que comienza la actividad al inicio de la pila
+        pila.addNextIntent(resultadoIntent);
+        PendingIntent resultadoPendingIntent =
+                pila.getPendingIntent(0,PendingIntent.FLAG_UPDATE_CURRENT);
+        builder.setContentIntent(resultadoPendingIntent);
+
+        // ENVIAR LA NOTIFICACIÓN
+
+        NotificationManager notificador =
+                (NotificationManager) getSystemService(getApplicationContext().NOTIFICATION_SERVICE);
+
+
+        // A partir de la version 0, hay que crer un canal de notificación
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            NotificationChannel canal = new NotificationChannel(
+                    "Mi canal",
+                    "título del canal de notificación",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+            notificador.createNotificationChannel(canal);
+        }
+
+        notificador.notify(notifID, builder.build());
+
+        Intent be = new Intent (view.getContext(), MainActivity.class);
+        startActivityForResult(be, 0);
+    }
+
     public void onClick(View view){
         NotificationCompat.Builder builder = new  NotificationCompat.Builder(this, "Mi canal")
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)

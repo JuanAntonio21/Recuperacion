@@ -13,9 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main6Activity extends AppCompatActivity {
     int notifID=1;
 
     Button n,m,c,b;
@@ -23,25 +22,20 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main6);
 
-        n=findViewById(R.id.n);
-        m=findViewById(R.id.m);
-        c=findViewById(R.id.c);
-        b=findViewById(R.id.b);
 
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent be = new Intent (view.getContext(), Main3Activity.class);
-                startActivityForResult(be, 0);
-            }
-        });
 
 
 
 
     }
+
+    public void onClick2(View view){
+        Intent be = new Intent (view.getContext(), Main7Activity.class);
+        startActivityForResult(be, 0);
+    }
+
     public void onClick(View view){
         NotificationCompat.Builder builder = new  NotificationCompat.Builder(this, "Mi canal")
                 .setSmallIcon(android.R.drawable.ic_dialog_alert)

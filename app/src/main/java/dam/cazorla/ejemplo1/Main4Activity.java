@@ -13,9 +13,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
-public class Main2Activity extends AppCompatActivity {
+public class Main4Activity extends AppCompatActivity {
     int notifID=1;
 
     Button n,m,c,b;
@@ -23,17 +22,17 @@ public class Main2Activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main4);
 
         n=findViewById(R.id.n);
-        m=findViewById(R.id.m);
+        b=findViewById(R.id.b);
         c=findViewById(R.id.c);
         b=findViewById(R.id.b);
 
-        b.setOnClickListener(new View.OnClickListener() {
+        c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent be = new Intent (view.getContext(), Main3Activity.class);
+                Intent be = new Intent (view.getContext(), Main5Activity.class);
                 startActivityForResult(be, 0);
             }
         });

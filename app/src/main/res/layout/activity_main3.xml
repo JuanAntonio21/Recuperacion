@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="152dp"
-        android:text="¿Quien gano el último balón de oro?"
+        android:text="¿Quien descubrio America?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,8 +23,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
         android:layout_marginTop="96dp"
-        android:onClick="onClick"
-        android:text="NEYMAR"
+        android:text="COLON"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -36,7 +35,7 @@
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
         android:onClick="onClick"
-        android:text="MESSI"
+        android:text="MAGALLANES"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -48,7 +47,7 @@
         android:layout_marginLeft="64dp"
         android:layout_marginTop="72dp"
         android:onClick="onClick"
-        android:text="CRISTIANO"
+        android:text="MARCO POLO"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/n" />
 
@@ -59,7 +58,8 @@
         android:layout_marginTop="72dp"
         android:layout_marginEnd="64dp"
         android:layout_marginRight="64dp"
-        android:text="benzema"
+        android:onClick="onClick"
+        android:text="VASCO DA GAMA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/m" />
 
@@ -71,14 +71,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/bd" />
+        app:srcCompat="@drawable/am" />
 
     <TextView
-        android:id="@+id/ARTE"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
-        android:text="DEPORTES"
+        android:text="HISTORIA"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
